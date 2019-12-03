@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-// import TodoListHeader from "./TodoListHeader";
 import TodoListTasks from "./TodoListTasks";
 import TodoListFooter from "./TodoListFooter";
 import TodoListHeader from "./TodoListHeader";
@@ -10,22 +9,6 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.newTaskTitleRef = React.createRef();
-        // setTimeout(() => {
-        //         let newTask = {
-        //             title: "Angular",
-        //             isDone: false,
-        //             priority: "low"
-        //         };
-        //         // делаем копию массива и помещаем в конец новую таску
-        //         let newTasks = [...this.state.tasks, newTask];
-        //         // меняем стейт с помощью специального метода this.setState
-        //         // передавая в качестве аргумента новый с теми свойствами которые
-        //         // нужно поменять: обратите внимание, filterValue останется прежним
-        //         this.setState({
-        //             tasks: newTasks
-        //         });
-        //     }, 3000
-        // );
     }
 
     state = {
@@ -56,17 +39,16 @@ class App extends React.Component {
     };
 
     changeTasksStatus = (task, isDone) => {
-    let newTasks = this.state.tasks.map(t => {
-        if (t !==task) {
-            return t;
-        }
-        else {
-            return {...t, isDone: isDone};
-        }
+        let newTasks = this.state.tasks.map(t => {
+            if (t !== task) {
+                return t;
+            } else {
+                return {...t, isDone: isDone};
+            }
         });
-    this.setState({
-        tasks: newTasks
-    })
+        this.setState({
+            tasks: newTasks
+        })
     };
 
     render = () => {

@@ -3,18 +3,42 @@
 }
 
 .filter-active {
-  background-color: #45ff13;
+    background-color: #45ff13;
 }
 
 .todoList {
-  width: 500px;
-  margin: 0 auto;
+    width: 500px;
+    margin: 0 auto;
 }
 
 .todoList > div {
-  padding: 10px;
+    padding: 10px;
 }
 
 .todoList-task {
 
+}
+
+.todoList-task.done {
+    opacity: 0.5;
+}
+
+
+.error {
+    border-color: red;
+}
+
+.hideShow {
+    margin-top: 5px;
+    font-weight: bold;
+    background-color: #ccc;
+    color: brown;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    border: 2px solid brown;
+    border-radius: 5px;
+    display: block;
+    width: 150px;
+    text-align: center;
 }
