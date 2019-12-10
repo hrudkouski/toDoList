@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
 
-class TodoListHeader extends React.Component {
+class AddNewItemForm extends React.Component {
 
     state = {
-        error: true,
-        title: ""
+        error: false,
+        title: ''
     };
 
     onKeyPress = (e) => {
       if (e.key === 'Enter') {
-          return this.onAddTaskClick();
+          return this.onAddItemClick();
       }
     };
 
@@ -18,38 +18,33 @@ class TodoListHeader extends React.Component {
         this.setState({title: e.currentTarget.value})
     };
 
-    onAddTaskClick = () => {
+    onAddItemClick = () => {
         let newTitle = this.state.title;
         if (newTitle !== "") {
-            this.props.addTask(newTitle);
+            this.props.addItem(newTitle);
             this.setState({error: false, title: ''});
         } else {
             this.setState({error: true});
         }
-
     };
 
     render = () => {
 
-        const inputClassName = this.state.error === true ? "error" : "";
+        const inputClassName = this.state.error ? "error" : "";
 
         return (
-            <div className="TodoListHeader">
-                <div className="todoList-header">
-                    <h3 className="todoList-header__title">What to Learn</h3>
                     <div className="todoList-newTaskForm">
                         <input onChange={this.onTitleChanged}
                                value={this.state.title}
+                               className={inputClassName}
                                type="text"
-                               placeholder="New task name"
-                               className={inputClassName} onKeyPress={this.onKeyPress}/>
-                        <button onClick={this.onAddTaskClick}>Add</button>
+                               placeholder="New item name"
+                               onKeyPress={this.onKeyPress}/>
+                        <button onClick={this.onAddItemClick}>Add</button>
                     </div>
-                </div>
-            </div>
         );
     }
 }
 
-export default TodoListHeader;
+export default AddNewItemForm;
 
