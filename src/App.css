@@ -1,8 +1,11 @@
 .App {
     display: flex;
     flex-direction: row;
-    margin: 0 auto;
-    background-color: #a9ff6b;
+    justify-content: space-evenly;
+    background-color: #000;
+    flex-wrap: wrap;
+    color: #FFF;
+    height: 80vh;
 }
 
 .filter-active {
@@ -10,7 +13,10 @@
 }
 
 .todoList {
-    width: 500px;
+    width: 250px;
+    border: #29f1e4 solid 3px;
+    border-radius: 50px;
+    margin: 10px 0;
 }
 
 .todoList > div {
@@ -22,13 +28,19 @@
 }
 
 .todoList-newTaskForm {
-    margin: 10px 0 10px 0;
+    margin: 10px;
 }
 
 .todoList-task.done {
     opacity: 0.5;
 }
 
+.todoList-header__title {
+    text-align: center;
+    font-size: 26px;
+    color: #92ff44;
+    text-decoration: underline;
+}
 
 .error {
     border-color: red;
@@ -45,7 +57,17 @@
     border: 2px solid brown;
     border-radius: 5px;
     display: block;
-    width: 150px;
     text-align: center;
     cursor: pointer;
+}
+
+.todoList-footer button {
+    font-weight: bold;
+    padding: 5px;
+    margin: 0 3px;
+}
+
+.buttonFooter {
+    display: flex;
+    justify-content: space-evenly;
 }
