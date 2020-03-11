@@ -7,6 +7,10 @@ class TodoListTask extends React.Component {
         editMode: false
     };
 
+    deleteTask = () => {
+        this.props.deleteTask(this.props.task.id);
+    };
+
     activateEditMode = () => {
         this.setState({editMode: true})
     };
@@ -38,6 +42,7 @@ class TodoListTask extends React.Component {
                          autoFocus={true}
                          value={this.props.task.title}/>
                 : <span onClick={this.activateEditMode}>{this.props.task.id} - {this.props.task.title}</span>}, priority: {this.props.task.priority}
+                <button onClick={this.deleteTask}>X</button>
             </div>
         );
     }

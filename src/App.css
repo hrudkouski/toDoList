@@ -5,7 +5,7 @@
     background-color: #000;
     flex-wrap: wrap;
     color: #FFF;
-    height: 80vh;
+    height: auto;
 }
 
 .filter-active {
@@ -31,6 +31,10 @@
     margin: 10px;
 }
 
+.todoList-newTaskForm button {
+    background-color: greenyellow;
+}
+
 .todoList-task.done {
     opacity: 0.5;
 }
@@ -49,13 +53,13 @@
 .hideShow {
     margin-top: 10px;
     font-weight: bold;
-    background-color: #ccc;
-    color: brown;
+    background-color: #0c0001;
+    color: white;
     padding: 5px;
     text-decoration: none;
     font-size: 16px;
-    border: 2px solid brown;
-    border-radius: 5px;
+    border: 2px solid #f180c9;
+    border-radius: 20px;
     display: block;
     text-align: center;
     cursor: pointer;
@@ -70,4 +74,9 @@
 .buttonFooter {
     display: flex;
     justify-content: space-evenly;
+}
+
+.todoList button:nth-child(1) {
+    background-color: red;
+    margin-left: 180px;
 }
